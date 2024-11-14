@@ -4,39 +4,33 @@ import logging as log
 class MongoAPI:
     def __init__(self, data):
         log.basicConfig(level=log.DEBUG, format='%(asctime)s %(levelname)s:\n%(message)s\n')
-        try:
-            self.client = MongoClient("mongodb://localhost:5000/")
+        self.client = MongoClient("mongodb://localhost:5000/")
 
-            database = data['database']
-            collection = data['collection']
-            cursor = self.client[database]
-            self.collection = cursor[collection]
-            self.data = data
+        # Explicitly get database and collection names from data
+        database_name = data.get('database')
+        collection_name = data.get('collection')
 
-        except Exception as e:
-            print(f"Error connecting to MongoDB: {e}")
+        cursor = self.client[database_name]
+        self.collection = cursor[collection_name]
+        self.data = data
 
     def read(self):
         log.info('Reading All Data')
         try:
             documents = self.collection.find()
-            # Print raw documents for debugging
-            print("Raw documents:", list(documents))
+            return [{item: data[item] for item in data if item != '_id'}
+                      for data in documents]
 
-            output = [{item: data[item] for item in data if item != '_id'}
-                      for data in self.collection.find()]
-            return output
         except Exception as e:
             print(f"Error reading documents: {e}")
             return []
 
     def write(self, data):
         log.info('Writing Data')
-        new_document = data['Document']
+        new_document = data.get('Document', data)
         response = self.collection.insert_one(new_document)
-        output = {'Status': 'Successfully Inserted',
+        return {'Status': 'Successfully Inserted',
                   'Document_ID': str(response.inserted_id)}
-        return output
 
     def update(self):
         log.info('Updating Data')
@@ -48,8 +42,8 @@ class MongoAPI:
 
     def delete(self, data):
         log.info('Deleting Data')
-        filt = data['Document']
-        response = self.collection.delete_one(filt)
+        delete = data['Delete']
+        response = self.collection.delete_one(delete)
         output = {'Status': 'Successfully Deleted' if response.deleted_count > 0 else "Document not found."}
         return output
 
