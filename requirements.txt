@@ -1,0 +1,14 @@
+click==7.1.2
+Flask==1.1.2
+itsdangerous==1.1.0
+Jinja2==2.11.2
+MarkupSafe==1.1.1
+pymongo==3.10.1
+Werkzeug==1.0.1
+filetype~=1.2.0
+validators~=0.34.0
+undetected-chromedriver~=3.5.5
+talkingheads~=0.5.4
+google-generativeai==0.8.3
+google~=3.0.0
+protobuf~=5.28.3

@@ -1,7 +1,6 @@
-from flask import Flask, request, json, Response
-from pymongo import MongoClient
+from flask import json
 
-from MongoAPI import MongoAPI
+from services.mongo_service import MongoAPI
 
 if __name__ == "__main__":
     data = {
