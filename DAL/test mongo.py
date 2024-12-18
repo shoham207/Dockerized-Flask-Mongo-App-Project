@@ -1,6 +1,6 @@
 from flask import json
 
-from services.mongo_service import MongoAPI
+from DAL.mongo_module import MongoAPI
 
 if __name__ == "__main__":
     data = {

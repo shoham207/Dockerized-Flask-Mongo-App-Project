@@ -1,10 +1,10 @@
-# services/gemini_service.py
+# modules/gemini_module.py
 
 import google.generativeai as genai
 from typing import Optional
 
 
-class GeminiService:
+class GeminiModule:
     """Service class for interacting with Google's Gemini AI model."""
 
     def __init__(self, api_key: str):
