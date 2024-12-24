@@ -37,30 +37,37 @@ A Flask-based web application that automatically generates inspirational memes u
   ```bash
   git clone https://github.com/shoham207/Dockerized-Flask-Mongo-App-Project
   cd Dockerized-Flask-Mongo-App-Project
-
+```
 2. Create and activate a virtual environment:
+  ```bash
   python -m venv venv
   source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-3. Install dependencies:
+```
+4. Install dependencies:
+```bash
   pip install -r requirements.txt
-
-4. Set up environment variables:
+```
+5. Set up environment variables:
+```bash
   export GEMINI_API_KEY='your_api_key_here'
   export MONGODB_URI='your_mongodb_uri'
-
-**## Docker Deployment**
+```
+## Docker Deployment
 
 1. Build the Docker image:
+```bash
   docker build -t meme-generator .
-
+```
 2. Run the container:
+```bash
   docker run -p 5000:5000 -e GEMINI_API_KEY='your_api_key' -e MONGODB_URI='your_mongodb_uri' meme-generator
-
+```
 ## Usage
 
 1. Start the application:
+```bash
     python app.py
+```
 2. Open your web browser and navigate to http://localhost:5000
 3. Click "Generate New Meme" to create a new motivational meme
 4. Use the "Download Meme" button to save the generated imag
