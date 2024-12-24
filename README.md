@@ -2,7 +2,7 @@
 
 A Flask-based web application that automatically generates inspirational memes using Google's Gemini AI API. The app creates unique motivational quotes, overlays them on beautiful background images, and allows users to download their personalized memes.
 
-![Motivational Meme Generator Demo](https://drive.google.com/file/d/1fwmSzUf1_eXR_KBkEJmdykw3CKWRvQWg/view?usp=sharing)
+[Motivational Meme Generator Demo](https://drive.google.com/file/d/1fwmSzUf1_eXR_KBkEJmdykw3CKWRvQWg/view?usp=sharing)
 
 ## Features
 
