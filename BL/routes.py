@@ -25,7 +25,7 @@ CORS(app, resources={
 })
 connection_string = "mongodb://localhost:5000"
 sentiment_module = SentimentModule(positive_threshold=0.3)
-gemini_module = GeminiModule(api_key='AIzaSyAnC1Gn1fsX8VCq3aPWZ39jP1PjvjPIiQg')
+gemini_module = GeminiModule(api_key='private')
 mongo_config = {
             'database': 'meme_db',
             'collection': 'memes'
