@@ -49,7 +49,7 @@ A Flask-based web application that automatically generates inspirational memes u
   export GEMINI_API_KEY='your_api_key_here'
   export MONGODB_URI='your_mongodb_uri'
 
-## Docker Deployment
+**## Docker Deployment**
 
 1. Build the Docker image:
   docker build -t meme-generator .
